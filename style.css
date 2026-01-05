@@ -6,6 +6,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  position: relative;
 }
 
 .quote-box {
@@ -14,23 +15,28 @@ body {
   position: relative;
   margin: 20px;
   padding: 30px;
-  height: 70vh;
-  width: 420px;
+  height: 70%;
+  min-height: 60vh;
+  width: 80%;
+  max-width: 420px;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0px 0px 70px #ccaf76 ;
 }
 
 #quote {
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px);
   margin-top: 20px ;
   margin-bottom: 20px;
+  position: relative;
   color: #61210F;
 }
 
 #author {
   display: block;
   font-style: italic;
+  font-size: clamp(14px, 3vw, 16px);
+  position: relative;
   color: #61210F;
   margin-bottom: 20px;
 }
@@ -38,18 +44,21 @@ body {
 .quote-box input{
     background-color: #61210F;
     color: #ccaf76;
-    width: 205px;
+    width: 80%;
+    max-width: 260px;
     border: none;
     outline: none;
     box-shadow: 0px 0px 30px #61210F;     
     margin: 20px 15px;
     padding: 10px 20px;
+    position: relative;
     cursor: pointer;
     transition: 0.4s;
 }
 
 ::placeholder{
   color: #ccaf76;
+  position: relative;
   opacity: 1;
 }
 
@@ -68,6 +77,7 @@ button {
   border-radius: 5px;
   border: none;
   box-shadow: 0px 0px 30px #61210F;
+  position: relative;
   cursor: pointer;
   transition: 0.4s;
 }
@@ -76,4 +86,26 @@ button:hover{
   transform: scale(1.2);
 }
 
+@media (max-width: 600px) {
+  .quote-box {
+    padding: 20px;
+    min-height: auto;
+  }
 
+  button {
+    width: 80%;
+  }
+
+  .quote-box input {
+    width: 90%;
+  }
+
+  button:hover,
+  #moodInput:hover {
+    transform: none;
+  }
+}
+
+h1{
+  position: relative;
+}
